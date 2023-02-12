@@ -1,0 +1,55 @@
+.animated-circle {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    position: relative;
+}
+.animated-circle::before, .animated-circle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+
+}
+.animated-circle::after {
+    box-shadow:
+            inset 0 1rem 0 rgba(250, 250, 0, 0.6),
+            inset 1rem 0 0 rgba(250, 200, 0, 0.6),
+            inset 0 -1rem 0 rgba(250, 150, 0, 0.6),
+            inset -1rem 0 0 rgba(250, 100, 0, 0.6);
+    animation: rotar 2s -0.5s linear infinite;
+}
+.animated-circle::before {
+    box-shadow:
+            inset 0 1rem 0 rgba(0, 250, 250, 0.6),
+            inset 1rem 0 0 rgba(0, 200, 200, 0.6),
+            inset 0 -1rem 0 rgba(0, 150, 200, 0.6),
+            inset -1rem 0 0 rgba(0, 200, 250, 0.6);
+    animation: rotarIz 2s -0.5s linear infinite;
+}
+@keyframes rotar{
+    0%{
+        transform:rotateZ(0deg) scaleX(1) scaleY(1);
+    }
+    50%{
+        transform:rotateZ(180deg) scaleX(0.82) scaleY(0.95);
+    }
+    100%{
+        transform:rotateZ(360deg) scaleX(1) scaleY(1);
+    }
+}
+
+@keyframes rotarIz{
+    0%{
+        transform:rotateZ(0deg) scaleX(1) scaleY(1);
+    }
+    50%{
+        transform:rotateZ(-180deg) scaleX(0.95) scaleY(0.85);
+    }
+    100%{
+        transform:rotateZ(-360deg) scaleX(1) scaleY(1);
+    }
+}
