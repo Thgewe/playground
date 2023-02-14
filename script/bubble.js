@@ -6,7 +6,7 @@
         amount = 12;
 
     const grid = document.querySelector('.bubble'),
-        newBtn = document.querySelector('.bubble__new'),
+        generateBtn = document.querySelector('.bubble__new'),
         startBtn = document.querySelector('.bubble__start'),
         columns = [...grid.children].filter((elem) => !elem.classList.contains('bubble__buttons'))
 
@@ -187,7 +187,7 @@
         if (isSorting) return
 
         isSorting = true
-        newBtn.disabled = true
+        generateBtn.disabled = true
         startBtn.disabled = true
 
         const defaultObj = [...defaultColumn].map(elem => ({elem, translate: 0}))
@@ -231,19 +231,25 @@
         Promise.all([defaultPromise, memorizePromise, returnPromise, twoWayPromise, twoWayReturnPromise])
             .then(() => {
                 isSorting = false
-                newBtn.disabled = false
+                generateBtn.disabled = false
                 startBtn.disabled = false
             })
     })
-    newBtn.addEventListener('click', () => {
+    generateBtn.addEventListener('click', () => {
         if (isSorting) return
+
+        const resetElem = (elem, inner) => {
+            elem.innerHTML = inner;
+            elem.style.transform = 'translate(0)';
+        }
+
         for (let i = 0; i < amount; i++) {
             const newInnerHTML = Math.round(Math.random() * 50).toString()
-            defaultColumn[i].innerHTML = newInnerHTML
-            memorizeColumn[i].innerHTML = newInnerHTML
-            returnColumn[i].innerHTML = newInnerHTML
-            twoWayColumn[i].innerHTML = newInnerHTML
-            twoWayReturnColumn[i].innerHTML = newInnerHTML
+            resetElem(defaultColumn[i], newInnerHTML)
+            resetElem(memorizeColumn[i], newInnerHTML)
+            resetElem(returnColumn[i], newInnerHTML)
+            resetElem(twoWayColumn[i], newInnerHTML)
+            resetElem(twoWayReturnColumn[i], newInnerHTML)
         }
     })
 })()
