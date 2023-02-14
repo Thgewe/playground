@@ -15,23 +15,23 @@
         </div>
     </header>
     <main class="main">
-        <div class="main__block">
+        <section class="main__block">
             <h2 class="main__title">Описание</h2>
             <p class="main__description">   Тут собраны всякие интересные компоненты, которые повстречались мне на просторах интернета.</p>
             <p class="main__description">   Если у меня был доступ к исходному коду, то в названии будет пометка: <span class="main__source">SOURCE</span></p>
             <p class="main__description">   Если я делал по гайду, то в названии будет пометка: <span class="main__guide">GUIDE</span></p>
             <p class="main__description">   Если найду что-нибудь интересное то добавлю сюда</p>
-        </div>
-        <div class="main__block">
+        </section>
+        <section class="main__block">
             <h2 class="main__title">Двигающаяся сетка</h2>
             <div class="moving-grid"></div>
-        </div>
-        <div class="main__block">
+        </section>
+        <section class="main__block">
             <h2 class="main__title">Анимированный круг <span class="main__source">SOURCE</span></h2>
             <div class="animated-circle"></div>
-        </div>
+        </section>
 
-        <div class="main__block">
+        <section class="main__block">
             <h2 class="main__title">Галерея</h2>
             <div class="gallery">
                 <button class="gallery__full"></button>
@@ -49,9 +49,37 @@
                     <div class="gallery__active"></div>
                 </div>
             </div>
-        </div>
+        </section>
+        <section class="main__block">
+            <h2 class="main__title">Сортировка пузырьком</h2>
+            <div class="bubble">
+                <div class="bubble__default">
+                    <div class="bubble__frame"></div>
+                </div>
+                <div class="bubble__memorize">
+                    <div class="bubble__frame"></div>
+                </div>
+                <div class="bubble__return">
+                    <div class="bubble__frame"></div>
+                </div>
+                <div class="bubble__two-way">
+                    <div class="bubble__frame"></div>
+                    <div class="bubble__frame"></div>
+                </div>
+                <div class="bubble__two-way-return">
+                    <div class="bubble__frame"></div>
+                    <div class="bubble__frame"></div>
+                </div>
+                <div class="bubble__buttons">
+                    <button class="bubble__start bubble__button">Сортировать</button>
+                    <button class="bubble__new bubble__button">Сгенерировать</button>
+                </div>
+            </div>
+
+        </section>
     </main>
     <script src="./script/movingGrid.js"></script>
     <script src="./script/gallery.js"></script>
+    <script src="./script/bubble.js"></script>
 </body>
 </html>

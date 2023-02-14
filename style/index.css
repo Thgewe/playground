@@ -1,6 +1,7 @@
 @import './moving-grid.css';
 @import './animated-circle.css';
 @import './gallery.css';
+@import './bubble.css';
 
 * {
     margin: 0;

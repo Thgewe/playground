@@ -1,0 +1,61 @@
+.bubble {
+    display: grid;
+    width: 50rem;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 1rem;
+    margin: 0 auto;
+    padding-top: 1rem;
+    font-family: var(--font-family-main);
+}
+
+.bubble__default,
+.bubble__memorize,
+.bubble__return,
+.bubble__two-way,
+.bubble__two-way-return {
+    position: relative;
+}
+.bubble__buttons {
+    grid-column: 1/-1;
+    margin-top: 1rem;
+    justify-self: center;
+}
+.bubble__buttons > .bubble__button {
+    border: 1px solid #e3e3e3;
+    padding: 0.5rem;
+    color: #030303;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.bubble__buttons > .bubble__button:hover {
+    background-color: #e3e3e3;
+}
+.bubble__buttons > .bubble__button:disabled {
+    background-color: #acacac;
+    color: #e3e3e3;
+    pointer-events: none;
+}
+
+.bubble__number {
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #1DA1F2;
+    border: 1px solid #0061FF;
+    transition: transform 1s;
+    color: #fff;
+    font-size: 1.5rem;
+}
+.bubble__frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    outline: 3px solid #FF3300;
+    transition: transform 1s;
+    z-index: 10;
+}
+.bubble__two-way > .bubble__frame + .bubble__frame,
+.bubble__two-way-return > .bubble__frame + .bubble__frame{
+    outline-color: #410093;
+}
